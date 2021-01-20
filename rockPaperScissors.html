@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="UTF-8"/>
+  <link href="./style.css" rel="stylesheet">
+</head>
+<header>
+    <h1 id="rockHeader">ROCK</h1>
+    <h1 id="paperHeader">PAPER</h1>
+    <h1 id="scissorsHeader">SCISSORS</h1>
+</header>
+<body>
+  <div id="outerFlex"> 
+    <div class="innerFlex">
+        <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id="scissors">scissors</button>
+        <button id="restart" disabled>restart</button>
+        <p id="you">You: 0</p>
+        <img src="./player.png" alt="" class="participantImage"/>
+    </div>
+    <p id="announcer"></p>
+    <div class="innerFlex">
+        <p id="computer">Computer: 0</p>
+        <img src="./evil_computer.jpg" alt="" class="participantImage"/>
+    </div>
+    
+  </div>
+  <div id="arena">
+        
+  </div>
+
+<script>
+    let playerScore=0;
+    let computerScore=0;
+
+    function round(player){
+        let rps = ["rock", "paper", "scissors"]
+        let index = Math.floor(Math.random() * 3);
+        //player win
+        document.querySelector("#arena").innerHTML += "<img src = ./" + rps[index] + ".png alt='' class='compChoice'/>";
+        if((rps[index]==="rock" && player==="paper") || (rps[index]==="scissors" && player==="rock") || (rps[index]==="paper" && player==="scissors")){
+            document.querySelector("#announcer").innerHTML="You won playing " + player + " against the Computer's " + rps[index];
+            playerScore++;
+            document.querySelector("#you").innerHTML=`You: ${playerScore}`;
+        }
+        //comp win
+        else if((player==="rock" && rps[index]==="paper") || (player==="scissors" && rps[index]==="rock") || (player==="paper" && rps[index]==="scissors")){
+            document.querySelector("#announcer").innerHTML="The Computer won playing " + rps[index] + " against your " + player;
+            computerScore++;
+            document.querySelector("#computer").innerHTML=`Computer: ${computerScore}`;
+        }
+        else{//tie
+            document.querySelector("#announcer").innerHTML="This round was a tie with both playing " + player;
+            
+        }
+
+        if(computerScore===5){
+            reset("The Computer");
+        }
+        if(playerScore===5){
+            reset("You");
+        }
+    }
+
+    function reset(winner){
+        document.getElementById("rock").disabled = true;
+        document.getElementById("paper").disabled = true;
+        document.getElementById("scissors").disabled = true;
+        document.getElementById("restart").disabled = false;
+       
+        if(winner==="You"){
+            document.querySelector("#announcer").innerHTML=winner + " have won, press restart to play again!";
+        }
+        if(winner==="The Computer"){
+            document.querySelector("#announcer").innerHTML=winner + " has won, press restart to play again!";
+        }
+    }
+
+    const rock = document.querySelector("#rock");
+    rock.onclick = function(){
+      document.querySelector("#arena").innerHTML = "<img src = ./rock.png alt='' class='playerChoice'/>";
+      round("rock");
+
+    }
+    const paper = document.querySelector("#paper");
+    paper.onclick = function(){
+        document.querySelector("#arena").innerHTML = "<img src = ./paper.png alt='' class='playerChoice'/>";
+        round("paper");
+    }
+    const scissors = document.querySelector("#scissors");
+    scissors.onclick = function(){
+        document.querySelector("#arena").innerHTML = "<img src = ./scissors.png alt='' class='playerChoice'/>";
+        round("scissors");
+    }
+    const restart = document.getElementById("restart");
+    restart.onclick = function(){
+        document.querySelector("#announcer").innerHTML="";
+        document.querySelector("#computer").innerHTML="Computer: 0";
+        document.querySelector("#you").innerHTML="You: 0";
+        document.querySelector("#arena").innerHTML = "";
+        document.getElementById("rock").disabled = false;
+        document.getElementById("paper").disabled = false;
+        document.getElementById("scissors").disabled = false;
+        document.getElementById("restart").disabled = true;
+        playerScore = 0;
+        computerScore = 0;
+    }
+  </script>
+</body>
+</html>

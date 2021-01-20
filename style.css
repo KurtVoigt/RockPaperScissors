@@ -1,0 +1,115 @@
+:root{
+    background-color: rgb(63, 61, 61);
+}
+header{
+    
+    display: flex;
+    flex-direction: row;
+    font-size: larger;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    
+    
+}
+header #rockHeader{
+    opacity: 0;
+    animation: fadeIn linear 0.01s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    padding-right: 20px;
+}
+header #paperHeader{
+    opacity: 0;
+    animation: fadeIn linear 0.01s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+header #scissorsHeader{
+    opacity: 0;
+    animation: fadeIn linear 0.01s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    padding-left: 20px;
+}
+
+button{
+    border-radius: 1000px;
+    color:white;
+    background-color: black;
+}
+
+button:disabled{
+    background-color: gray;
+}
+
+.participantImage{
+    height: 25vh;
+    width: 15vw;
+}
+
+#arena{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#outerFlex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.compChoice{
+    padding-left: 200px;
+}
+.playerChoice{
+    padding-right: 200px;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes playerWin{
+    0%{
+
+    }
+    100%{
+
+    }
+}
+
+@keyframes playerLose{
+    0%{
+
+    }
+    100%{
+
+    }
+}
+
+@keyframes compWin{
+    0%{
+
+    }
+    100%{
+
+    }
+}
+
+@keyframes compLose{
+    0%{
+
+    }
+    100%{
+
+    }
+}
