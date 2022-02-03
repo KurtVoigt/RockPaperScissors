@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>HTML 5 Boilerplate</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <header id="titleBox">
-            <div>ROCK</div>
-            <div>PAPER</div>
-            <div>SCISSORS</div>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roshambo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
 
-        <div id="arena">
-            <div id="playerAndImage">
-                You
-                <img src="./images/player.png">
+<body>
+    <header class="titleBox">
+        <div>ROCK</div>
+        <div>PAPER</div>
+        <div>SCISSORS</div>
+    </header>
+    <div class="arenaContainer">
+        <div class="arena">
+            <div class="playerAndImage">
+                <div class="RPSButtons">
+                    <button type="button" class= "button" id="Rock">Rock</button>
+                    <button type="button" class= "button" id="Paper">Paper</button>
+                    <button type="button" class= "button" id="Scissors">Scissors</button>
+                    <button type="button" class= "button" id="Reset" disabled>Reset</button>
+                </div>
+                <div id = "you" class = "playerLabel">
+                    You: 0
+                </div>
+                <img src="./images/player.png" class="avatar">
             </div>
-            <div id="compAndImage">
-                Computer
-                <img src="./images/evil_computer.jpg">
+            <div class="RPSFight" id="fightBox">
+                <div id="PlayerPokemon">
+
+                </div>
+                <div id="ComputerPokemon">
+
+                </div>
+            </div>
+            <div class="compAndImage">
+                <div id = "computer" class = "playerLabel">
+                    The Computer: 0
+                </div>
+                <img src="./images/evil_computer.jpg" class="avatar">
             </div>
         </div>
-    </body>
+        <div class="Commentator">
+
+        </div>
+    </div>
+</body>
+
 </html>
