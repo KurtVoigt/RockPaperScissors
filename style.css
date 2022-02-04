@@ -1,19 +1,24 @@
+:root{
+    font-family: 'Rye', cursive;
+}
+
 body{
     margin: 0;
     padding: 0;
-    background-color: rgba(214, 140, 43, .6);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .titleBox{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 100px;
+    background-color: saddlebrown;
+    margin-top: 5vh;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-.arenaContainer{
-margin-top: 10vh;
-
-}
 
 .arena{
     display: flex;
@@ -22,14 +27,23 @@ margin-top: 10vh;
     background-image: url("./images/boris-yue-9sE-72cYCeI-unsplash.jpg");
     background-size: 100% 100%;
     height: 70vh;
-    margin: 0 240px;
+    margin: 0 15%;
 }
 .playerAndImage{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    flex: 1 1 0px;
     
 }
+
+.playerLabel{
+    background-color: saddlebrown;
+    padding: 2px 5px;
+
+}
+
 
 .RPSFight{
     flex-grow: 0;
@@ -61,8 +75,25 @@ margin-top: 10vh;
     animation: fly-left 3s linear 2.5s 1 normal forwards;
 }
 
+button{
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: larger;
+    font-family: 'Rye', cursive;
+    color:seashell;
+}
+
+button:disabled{
+    color: rgba(0, 0, 0, 0.9);
+}
+
 .RPSButtons{
     display: flex;
+    align-items:flex-end;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+   
 }
 
 .pokemon{
@@ -98,10 +129,16 @@ margin-top: 10vh;
 }
 
 .avatar{
-    width: 176px;
-    height: 286px;
+    width: 120px;
+    height: 200px;
 }
 
+.Commentator{
+    background-color: saddlebrown;
+    margin: 0 15%;
+    font-size: 36px;
+    text-align: center;
+}
 @keyframes left-to-right {
     0%{
         transform: translateX(0%);
@@ -146,6 +183,10 @@ margin-top: 10vh;
         transform: translateX(-80%);
     }
 
+    95%{
+        transform: translateX(-80%)
+    }
+
     100%{
         transform: translateX(-80%) rotate(25deg);
         
@@ -155,13 +196,13 @@ margin-top: 10vh;
 
 @keyframes fly-right {
     100%{
-        transform: translate(300px, -300px) rotate(1350deg)
+        transform: translate(300px, -250%) rotate(1350deg)
     }
 }
 
 @keyframes fly-left {
     100%{
-        transform: translate(-300px, -300px) rotate(-1350deg)
+        transform: translate(-300px, -250%) rotate(-1350deg)
     }
 }
 
